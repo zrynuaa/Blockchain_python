@@ -237,6 +237,13 @@ def full_chain():
     }
     return jsonify(response), 200
 
+@app.route('/nodes', methods=['GET'])
+def full_nodes():
+    response = {
+        'total_nodes': list(blockchain.nodes)
+    }
+    return jsonify(response), 200
+
 @app.route('/transaction', methods=['GET'])
 def full_transaction():
     response = {
